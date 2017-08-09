@@ -7,6 +7,10 @@
 //
 
 import UIKit
+import FBSDKLoginKit
+import FBSDKCoreKit
+import Firebase
+
 
 class SignInVC: UIViewController {
 
@@ -26,6 +30,37 @@ class SignInVC: UIViewController {
         self.emailText.configure()
         
     }
+    
+    @IBAction func facebookBtnPressed(_ sender: CustomButton) {
+        
+        let facebookManager = FBSDKLoginManager()
+        
+        facebookManager.logIn(withReadPermissions: ["email"], from: self) { (result, error) in
+            if error != nil {
+                print("KOT: you have troble with login \(String(describing: error))")
+            } else if result?.isCancelled == true {
+                print("KOT: user canceled Facebook Aut")
+            }else {
+                print("KOT: you are IN Facebook")
+                let credential = FacebookAuthProvider.credential(withAccessToken: FBSDKAccessToken.current().tokenString)
+                self.firebaseAut(credential)
+           
+            }
+        }
+        
+        
+    }
+    func firebaseAut(_ credential: AuthCredential) {
+        Auth.auth().signIn(with: credential) { (user, error) in
+            
+                if error != nil {
+                    print("KOt: enebled to autentification to Firebase")
+                } else {
+                    print("Kot: We are in Firebase")
+                }
+            }
+        }
+    
 
 
 }
