@@ -10,14 +10,21 @@ import UIKit
 
 class SignInVC: UIViewController {
 
+    
+    @IBOutlet weak var passText: CustomTextField!
+    @IBOutlet weak var emailText: CustomTextField!
+    @IBOutlet weak var loginBtn: CustomButton!
+    @IBOutlet weak var faceBtn: CustomButton!
+    @IBOutlet weak var mainView: CustomView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        
+        self.loginBtn.configureLogin()
+        self.faceBtn.configureFace()
+        self.mainView.configure()
+        self.passText.configure()
+        self.emailText.configure()
+        
     }
 
 

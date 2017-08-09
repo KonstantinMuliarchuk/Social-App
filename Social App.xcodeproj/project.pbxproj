@@ -13,6 +13,11 @@
 		200662C81F3B04E400C2551A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 200662C71F3B04E400C2551A /* Assets.xcassets */; };
 		200662CB1F3B04E400C2551A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 200662C91F3B04E400C2551A /* LaunchScreen.storyboard */; };
 		200662D31F3B055300C2551A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 200662D21F3B055300C2551A /* GoogleService-Info.plist */; };
+		200662D81F3B433A00C2551A /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200662D71F3B433A00C2551A /* CustomView.swift */; };
+		200662DB1F3B436100C2551A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200662DA1F3B436100C2551A /* Constants.swift */; };
+		200662DD1F3B468C00C2551A /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200662DC1F3B468C00C2551A /* Protocols.swift */; };
+		200662DF1F3B483800C2551A /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200662DE1F3B483800C2551A /* CustomButton.swift */; };
+		209A004A1F3B7BE000C6B7C8 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209A00491F3B7BE000C6B7C8 /* CustomTextField.swift */; };
 		CE2DC54EE567F659F5219A55 /* Pods_Social_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CAA8487A19AC3D4A426E758 /* Pods_Social_App.framework */; };
 /* End PBXBuildFile section */
 
@@ -26,6 +31,11 @@
 		200662CA1F3B04E400C2551A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		200662CC1F3B04E400C2551A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		200662D21F3B055300C2551A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		200662D71F3B433A00C2551A /* CustomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
+		200662DA1F3B436100C2551A /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		200662DC1F3B468C00C2551A /* Protocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
+		200662DE1F3B483800C2551A /* CustomButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		209A00491F3B7BE000C6B7C8 /* CustomTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		4CAA8487A19AC3D4A426E758 /* Pods_Social_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Social_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B38C546925D224D4138A847 /* Pods-Social App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Social App.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Social App/Pods-Social App.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -80,6 +90,7 @@
 		200662BF1F3B04E400C2551A /* Social App */ = {
 			isa = PBXGroup;
 			children = (
+				200662D91F3B434E00C2551A /* Util */,
 				200662D41F3B223F00C2551A /* Model */,
 				200662D51F3B224B00C2551A /* View */,
 				200662D61F3B225400C2551A /* Controller */,
@@ -103,6 +114,9 @@
 		200662D51F3B224B00C2551A /* View */ = {
 			isa = PBXGroup;
 			children = (
+				200662D71F3B433A00C2551A /* CustomView.swift */,
+				200662DE1F3B483800C2551A /* CustomButton.swift */,
+				209A00491F3B7BE000C6B7C8 /* CustomTextField.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -113,6 +127,15 @@
 				200662C21F3B04E400C2551A /* SignInVC.swift */,
 			);
 			name = Controller;
+			sourceTree = "<group>";
+		};
+		200662D91F3B434E00C2551A /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				200662DA1F3B436100C2551A /* Constants.swift */,
+				200662DC1F3B468C00C2551A /* Protocols.swift */,
+			);
+			name = Util;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -240,8 +263,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				209A004A1F3B7BE000C6B7C8 /* CustomTextField.swift in Sources */,
+				200662D81F3B433A00C2551A /* CustomView.swift in Sources */,
+				200662DD1F3B468C00C2551A /* Protocols.swift in Sources */,
+				200662DF1F3B483800C2551A /* CustomButton.swift in Sources */,
 				200662C31F3B04E400C2551A /* SignInVC.swift in Sources */,
 				200662C11F3B04E400C2551A /* AppDelegate.swift in Sources */,
+				200662DB1F3B436100C2551A /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
