@@ -78,7 +78,7 @@
                                         <rect key="frame" x="0.0" y="44" width="275" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="18"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dQT-PE-nBR" customClass="CustomButton" customModule="Social_App" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="84" width="275" height="36"/>
@@ -87,6 +87,9 @@
                                         <state key="normal" title="Войти">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="signInButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2HL-zW-dRp"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>

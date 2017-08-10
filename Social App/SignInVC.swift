@@ -61,6 +61,26 @@ class SignInVC: UIViewController {
             }
         }
     
+    @IBAction func signInButtonPressed(_ sender: CustomButton) {
+        
+        if let email = emailText.text, let password = passText.text {
+            Auth.auth().signIn(withEmail: email, password: password, completion: { (user, error) in
+                if error == nil {
+                    print("Kot: We are login to Firebase via Email")
+                } else {
+                    Auth.auth().createUser(withEmail: email, password: password, completion: { (user, error) in
+                        if error != nil {
+                            print("Kot: Enable to create account in Firebase via email ")
+                        }else {
+                            print("Kot: we are create account and log in to Firebase via email ")
+                        }
+                    })
+                }
+            })
+        }
+        
+        
+    }
 
 
 }
