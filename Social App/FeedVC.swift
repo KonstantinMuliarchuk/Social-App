@@ -53,7 +53,7 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     
 
-    @IBAction func logoutButtton(_ sender: Any) {
+    @IBAction func logoutButtton(_ sender: UITapGestureRecognizer) {
         performSegue(withIdentifier: "GoBackToLogin", sender: nil)
         let keyChainResult = KeychainWrapper.standard.removeObject(forKey: KEY_UID)
         print("Kot: Logjut and delete key from Keychain \(keyChainResult)")

@@ -70,7 +70,8 @@ class SignInVC: UIViewController {
                 } else {
                     print("Kot: We are in Firebase")
                     if let user = user {
-                        self.completeSignIn(id: user.uid)
+                        let userData = ["provider": credential.provider]
+                        self.completeSignIn(id: user.uid, userData: userData)
                         
                     }
                 }
@@ -84,7 +85,8 @@ class SignInVC: UIViewController {
                 if error == nil {
                     print("Kot: We are login to Firebase via Email")
                     if let user = user {
-                        self.completeSignIn(id: (user.uid))
+                        let userData = ["provider": user.providerID]
+                        self.completeSignIn(id: user.uid, userData: userData)
                     }
                         } else {
                             Auth.auth().createUser(withEmail: email, password: password, completion: { (user, error) in
@@ -93,7 +95,8 @@ class SignInVC: UIViewController {
                                 }else {
                                     print("Kot: we are create account and log in to Firebase via email ")
                                     if let user = user {
-                                        self.completeSignIn(id: (user.uid))
+                                        let userData = ["provider": user.providerID]
+                                        self.completeSignIn(id: user.uid, userData: userData)
                                     }
                                 }
                             })
@@ -103,7 +106,8 @@ class SignInVC: UIViewController {
         
         
     }
-    func completeSignIn (id: String) {
+    func completeSignIn (id: String, userData: Dictionary<String, String>) {
+        DataService.ds.createFirebaseDBUser(uid: id, userData: userData)
         let keyChainResult = KeychainWrapper.standard.set(id, forKey: KEY_UID)
         print("Kot: Data saved to keychain = \(keyChainResult)")
         performSegue(withIdentifier: "goToFeed", sender: nil)

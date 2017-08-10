@@ -20,6 +20,7 @@
 		201E14A81F3C622600AF912D /* FeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201E14A71F3C622600AF912D /* FeedVC.swift */; };
 		201E14AA1F3C78D500AF912D /* CustomImmageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201E14A91F3C78D500AF912D /* CustomImmageView.swift */; };
 		201E14AC1F3C8B0600AF912D /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201E14AB1F3C8B0600AF912D /* PostCell.swift */; };
+		201E14AF1F3CDB9300AF912D /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201E14AE1F3CDB9300AF912D /* DataService.swift */; };
 		209A004A1F3B7BE000C6B7C8 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209A00491F3B7BE000C6B7C8 /* CustomTextField.swift */; };
 		CE2DC54EE567F659F5219A55 /* Pods_Social_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CAA8487A19AC3D4A426E758 /* Pods_Social_App.framework */; };
 /* End PBXBuildFile section */
@@ -41,6 +42,7 @@
 		201E14A71F3C622600AF912D /* FeedVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedVC.swift; sourceTree = "<group>"; };
 		201E14A91F3C78D500AF912D /* CustomImmageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomImmageView.swift; sourceTree = "<group>"; };
 		201E14AB1F3C8B0600AF912D /* PostCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
+		201E14AE1F3CDB9300AF912D /* DataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		209A00491F3B7BE000C6B7C8 /* CustomTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		209A004B1F3BA1FB00C6B7C8 /* Social App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Social App.entitlements"; sourceTree = "<group>"; };
 		4CAA8487A19AC3D4A426E758 /* Pods_Social_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Social_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -97,6 +99,7 @@
 		200662BF1F3B04E400C2551A /* Social App */ = {
 			isa = PBXGroup;
 			children = (
+				201E14AD1F3CDB5700AF912D /* Services */,
 				209A004B1F3BA1FB00C6B7C8 /* Social App.entitlements */,
 				200662D91F3B434E00C2551A /* Util */,
 				200662D41F3B223F00C2551A /* Model */,
@@ -147,6 +150,14 @@
 				200662DC1F3B468C00C2551A /* Protocols.swift */,
 			);
 			name = Util;
+			sourceTree = "<group>";
+		};
+		201E14AD1F3CDB5700AF912D /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				201E14AE1F3CDB9300AF912D /* DataService.swift */,
+			);
+			name = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -284,6 +295,7 @@
 				201E14AA1F3C78D500AF912D /* CustomImmageView.swift in Sources */,
 				200662DD1F3B468C00C2551A /* Protocols.swift in Sources */,
 				200662DF1F3B483800C2551A /* CustomButton.swift in Sources */,
+				201E14AF1F3CDB9300AF912D /* DataService.swift in Sources */,
 				201E14A81F3C622600AF912D /* FeedVC.swift in Sources */,
 				200662C31F3B04E400C2551A /* SignInVC.swift in Sources */,
 				200662C11F3B04E400C2551A /* AppDelegate.swift in Sources */,
