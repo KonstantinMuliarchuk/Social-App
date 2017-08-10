@@ -21,6 +21,7 @@
 		201E14AA1F3C78D500AF912D /* CustomImmageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201E14A91F3C78D500AF912D /* CustomImmageView.swift */; };
 		201E14AC1F3C8B0600AF912D /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201E14AB1F3C8B0600AF912D /* PostCell.swift */; };
 		201E14AF1F3CDB9300AF912D /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201E14AE1F3CDB9300AF912D /* DataService.swift */; };
+		201E14B11F3CF32600AF912D /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201E14B01F3CF32600AF912D /* Post.swift */; };
 		209A004A1F3B7BE000C6B7C8 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209A00491F3B7BE000C6B7C8 /* CustomTextField.swift */; };
 		CE2DC54EE567F659F5219A55 /* Pods_Social_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CAA8487A19AC3D4A426E758 /* Pods_Social_App.framework */; };
 /* End PBXBuildFile section */
@@ -43,6 +44,7 @@
 		201E14A91F3C78D500AF912D /* CustomImmageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomImmageView.swift; sourceTree = "<group>"; };
 		201E14AB1F3C8B0600AF912D /* PostCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
 		201E14AE1F3CDB9300AF912D /* DataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
+		201E14B01F3CF32600AF912D /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		209A00491F3B7BE000C6B7C8 /* CustomTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		209A004B1F3BA1FB00C6B7C8 /* Social App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Social App.entitlements"; sourceTree = "<group>"; };
 		4CAA8487A19AC3D4A426E758 /* Pods_Social_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Social_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -118,6 +120,7 @@
 		200662D41F3B223F00C2551A /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				201E14B01F3CF32600AF912D /* Post.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -293,6 +296,7 @@
 				209A004A1F3B7BE000C6B7C8 /* CustomTextField.swift in Sources */,
 				200662D81F3B433A00C2551A /* CustomView.swift in Sources */,
 				201E14AA1F3C78D500AF912D /* CustomImmageView.swift in Sources */,
+				201E14B11F3CF32600AF912D /* Post.swift in Sources */,
 				200662DD1F3B468C00C2551A /* Protocols.swift in Sources */,
 				200662DF1F3B483800C2551A /* CustomButton.swift in Sources */,
 				201E14AF1F3CDB9300AF912D /* DataService.swift in Sources */,
