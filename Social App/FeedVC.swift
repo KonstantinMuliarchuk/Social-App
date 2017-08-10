@@ -10,7 +10,7 @@ import UIKit
 import SwiftKeychainWrapper
 import Firebase
 
-class FeedVC: UIViewController {
+class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var navigationView: CustomView!
     @IBOutlet weak var postButton: CustomButton!
     @IBOutlet weak var chouseImage: CustomImmageView!
@@ -18,8 +18,17 @@ class FeedVC: UIViewController {
     @IBOutlet weak var profileImage: CustomImmageView!
 
     @IBOutlet weak var logoutBtn: CustomButton!
+    
+    
+    @IBOutlet weak var tableView: UITableView!
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tableView.delegate = self
+        tableView.dataSource = self
         
         navigationView.configure()
         postButton.configureFace()
@@ -29,6 +38,20 @@ class FeedVC: UIViewController {
         
 
     }
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 3
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        return tableView.dequeueReusableCell(withIdentifier: "PostCell")!
+    }
+    
+    
 
     @IBAction func logoutButtton(_ sender: Any) {
         performSegue(withIdentifier: "GoBackToLogin", sender: nil)
