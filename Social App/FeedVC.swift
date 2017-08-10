@@ -35,6 +35,9 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         chouseImage.configure()
         descrTextField.configure()
         
+        DataService.ds.REF_POSTS.observe(.value, with: { (snapshot) in
+            print(snapshot.value!)
+        })
         
 
     }
