@@ -11,12 +11,22 @@ import SwiftKeychainWrapper
 import Firebase
 
 class FeedVC: UIViewController {
+    @IBOutlet weak var navigationView: CustomView!
+    @IBOutlet weak var postButton: CustomButton!
+    @IBOutlet weak var chouseImage: CustomImmageView!
+    @IBOutlet weak var descrTextField: CustomTextField!
+    @IBOutlet weak var profileImage: CustomImmageView!
 
     @IBOutlet weak var logoutBtn: CustomButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        logoutBtn.configureLogin()
+        navigationView.configure()
+        postButton.configureFace()
+        chouseImage.configure()
+        descrTextField.configure()
+        
+        
 
     }
 
