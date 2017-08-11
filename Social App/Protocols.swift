@@ -65,5 +65,6 @@ extension CustomImageProtocol where Self: UIImageView {
         layer.shadowColor = UIColor.black.cgColor
         layer.cornerRadius = frame.width / 2
         layer.shadowOpacity = 0.6
+        clipsToBounds = true
     }
 }

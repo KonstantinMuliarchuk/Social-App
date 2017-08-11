@@ -201,13 +201,17 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="MUy-XB-V9L">
                                         <rect key="frame" x="8" y="8" width="327" height="49"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="add-image" translatesAutoresizingMaskIntoConstraints="NO" id="sKj-Mf-V1O" customClass="CustomImmageView" customModule="Social_App" customModuleProvider="target">
+                                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="add-image" translatesAutoresizingMaskIntoConstraints="NO" id="sKj-Mf-V1O" customClass="CustomImmageView" customModule="Social_App" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="49" height="49"/>
                                                 <color key="backgroundColor" red="0.56379533680000005" green="0.56379533680000005" blue="0.56379533680000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <gestureRecognizers/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="49" id="3Fx-rE-kBV"/>
                                                     <constraint firstAttribute="height" constant="49" id="w87-Gf-CI5"/>
                                                 </constraints>
+                                                <connections>
+                                                    <outletCollection property="gestureRecognizers" destination="FGX-gm-n62" appends="YES" id="p1z-fh-MyT"/>
+                                                </connections>
                                             </imageView>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Оставьте коментарий" textAlignment="natural" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="md2-7v-7dQ" customClass="CustomTextField" customModule="Social_App" customModuleProvider="target">
                                                 <rect key="frame" x="58" y="14" width="211" height="21"/>
@@ -259,7 +263,7 @@
                                                                         <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bIj-yH-lt9">
                                                                             <rect key="frame" x="0.0" y="0.0" width="327" height="60"/>
                                                                             <subviews>
-                                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile" translatesAutoresizingMaskIntoConstraints="NO" id="6az-eU-yf2" customClass="CustomImmageView" customModule="Social_App" customModuleProvider="target">
+                                                                                <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile" translatesAutoresizingMaskIntoConstraints="NO" id="6az-eU-yf2" customClass="CustomImmageView" customModule="Social_App" customModuleProvider="target">
                                                                                     <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
                                                                                     <constraints>
                                                                                         <constraint firstAttribute="width" constant="60" id="Odq-zp-4V4"/>
@@ -371,6 +375,11 @@
                 <tapGestureRecognizer id="YZh-eR-ZWl">
                     <connections>
                         <action selector="logoutButtton:" destination="3HU-qh-0wo" id="6sI-4v-DTG"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="FGX-gm-n62">
+                    <connections>
+                        <action selector="selectImageTaped:" destination="3HU-qh-0wo" id="Xvt-og-WUf"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>

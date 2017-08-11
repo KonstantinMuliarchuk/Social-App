@@ -10,7 +10,8 @@ import UIKit
 import SwiftKeychainWrapper
 import Firebase
 
-class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
     @IBOutlet weak var navigationView: CustomView!
     @IBOutlet weak var postButton: CustomButton!
     @IBOutlet weak var chouseImage: CustomImmageView!
@@ -23,10 +24,14 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var tableView: UITableView!
     
     var posts = [Post]()
+    var imagePicker: UIImagePickerController!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        imagePicker = UIImagePickerController()
+        imagePicker.allowsEditing = true
+        imagePicker.delegate = self
         
         tableView.delegate = self
         tableView.dataSource = self
@@ -70,6 +75,23 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         return PostCell()
         }
     }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        if let image = info[UIImagePickerControllerEditedImage] as? UIImage {
+            chouseImage.image = image
+        }else {
+            print("KOt : image was not selected")
+        }
+        imagePicker.dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func selectImageTaped(_ sender: Any) {
+        
+        
+        present(imagePicker, animated: true, completion: nil)
+        
+    }
+    
     
     
 
