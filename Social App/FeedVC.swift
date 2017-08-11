@@ -12,6 +12,7 @@ import Firebase
 
 class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
+    @IBOutlet weak var captionTextView: UITextView!
     @IBOutlet weak var navigationView: CustomView!
     @IBOutlet weak var postButton: CustomButton!
     @IBOutlet weak var chouseImage: CustomImmageView!
@@ -23,8 +24,11 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
     
     @IBOutlet weak var tableView: UITableView!
     
+    
+    var imageSelected = false
     var posts = [Post]()
     var imagePicker: UIImagePickerController!
+    
     static var immageCache: NSCache <NSString, UIImage> = NSCache()
     
     
@@ -86,6 +90,7 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         if let image = info[UIImagePickerControllerEditedImage] as? UIImage {
+            self.imageSelected = true
             chouseImage.image = image
         }else {
             print("KOt : image was not selected")
@@ -101,6 +106,53 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
     }
     
     
+    @IBAction func postButtonPressed(_ sender: CustomButton) {
+        
+        guard let caption = self.descrTextField.text, caption != "" else {
+            print("Kot: Input any caption here")
+            return
+        }
+        guard let image = chouseImage.image,  self.imageSelected == true else {
+            print("KOT: You should  Select the image")
+            return
+        }
+        if let imageData = UIImageJPEGRepresentation(image, 0.2) {
+            
+            let immageUid = NSUUID().uuidString
+            let metaData = StorageMetadata()
+            metaData.contentType = "immage/jpeg"
+            
+            DataService.ds.REF_POSTS_IMAGES.child(immageUid).putData(imageData, metadata: metaData, completion: { (metadata, error) in
+                if error != nil {
+                    print("Kot: Tha image do not load to firebase")
+                } else {
+                    print("Kot: Sucesfuly download Data to firebase")
+                    let downloadUrl = metadata?.downloadURL()?.absoluteString
+                    if let url = downloadUrl {
+                        self.postToFireBase(imageUrl: url)
+                    }
+                    
+                }
+                
+            })
+        }
+        
+    }
+    
+    func postToFireBase(imageUrl: String) {
+        let post: Dictionary<String, Any> = [
+        "caption": descrTextField.text!,
+        "imageUrl": imageUrl,
+        "likes": 0
+        ]
+        let fireBasePost = DataService.ds.REF_POSTS.childByAutoId()
+        fireBasePost.setValue(post)
+        
+        self.descrTextField.text = ""
+        self.imageSelected = false
+        self.chouseImage.image = UIImage(named: "add-image")
+        tableView.reloadData()
+    }
     
 
     @IBAction func logoutButtton(_ sender: UITapGestureRecognizer) {

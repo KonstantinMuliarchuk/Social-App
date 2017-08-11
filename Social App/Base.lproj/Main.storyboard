@@ -227,6 +227,9 @@
                                                     <constraint firstAttribute="height" constant="49" id="n2C-jn-TZq"/>
                                                 </constraints>
                                                 <state key="normal" title="Button" image="add-post"/>
+                                                <connections>
+                                                    <action selector="postButtonPressed:" destination="3HU-qh-0wo" eventType="touchUpInside" id="IH4-Im-Ot0"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
